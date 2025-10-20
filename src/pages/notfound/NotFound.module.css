@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; /* Usa 80vh para dar espaço para header/footer */
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  padding: 20px;
+  background-color: #f8f9fa; /* Um fundo leve */
+}
+
+.icon {
+  width: 90px;
+  height: 90px;
+  color: #6c757d; /* Cinza sutil */
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 2.5rem; /* 40px */
+  font-weight: 700;
+  color: #343a40; /* Cinza escuro */
+  margin: 0 0 10px 0;
+}
+
+.text {
+  font-size: 1.125rem; /* 18px */
+  color: #6c757d;
+  margin-bottom: 30px;
+  max-width: 450px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 16px; /* Espaço entre os botões */
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  /* Estilo do botão primário (Home) */
+  background-color: #007bff;
+  color: white;
+}
+
+.button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.buttonSecondary {
+  /* Estilo do botão secundário (Voltar) */
+  background-color: #ffffff;
+  color: #007bff;
+  border: 1px solid #dee2e6;
+}

@@ -4,7 +4,8 @@ import Home from "./pages/home"
 import Login from "./pages/login"
 import Register from "./pages/register"
 import SocialMedias from "./pages/socialmedias"
-import Teste from "./pages/teste"
+import NotFound from "./pages/notfound"
+
 
 import { Private } from "./routes/Private"
 
@@ -30,9 +31,9 @@ const router = createBrowserRouter([
     element: <Private><SocialMedias /></Private>,
   },
   {
-    path: "/teste",
-    element: <Private><Teste /></Private>,
-  },
+    path: "*",
+    element: <NotFound />,
+  }
 ]);
 
 export { router };

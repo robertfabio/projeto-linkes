@@ -3,7 +3,7 @@ import { Input } from "../../input/input";
 import { useState, type FormEvent } from "react";
 import { auth } from "../../services/firebaseConnect";
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { Alert } from "../../assets/social/components/alerta";
+import { Alert } from "../../components/alerta";
 
 export default function Login() {
     const [email, setEmail] = useState("");

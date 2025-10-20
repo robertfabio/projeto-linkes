@@ -48,7 +48,7 @@ export function Alert({
         ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
       `}
     >
-      <div className={`${bgColor} text-black py-3 px-4 flex items-center justify-center w-fit mx-auto rounded-b-lg shadow-lg`}>
+      <div className={`${bgColor} text-white py-3 px-4 flex items-center justify-center w-fit mx-auto rounded-b-lg shadow-lg`}>
         <p className="text-sm font-medium flex-1 text-center pr-8">
           {message}
         </p>

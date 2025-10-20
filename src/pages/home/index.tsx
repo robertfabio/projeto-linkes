@@ -1,7 +1,7 @@
 import { Social } from '../../assets/social'
 import { FaGithub, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
-import { Alert } from '../../assets/social/components/alert'
-import { LinkesLogo } from '../../assets/LinkesLogo'
+import { Alert } from '../../components/alert'
+
 
 export default function Home() {
     return (
@@ -38,10 +38,7 @@ export default function Home() {
                         duration={5000}
                         />
                     </button>
-                    
-            <LinkesLogo className="w-12 h-12" />
             </main>
-
         </div>
     )
 }
