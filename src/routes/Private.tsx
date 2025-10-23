@@ -1,6 +1,6 @@
 import { auth } from '../services/firebaseConnect';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { type ReactNode, useState, useEffect, use } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { type ReactNode, useState, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 
 interface PrivateProps {

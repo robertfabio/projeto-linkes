@@ -1,5 +1,5 @@
 import { Header } from "../../components/header/header";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { FiTrash } from 'react-icons/fi'
 
 export default function Admin() {
@@ -7,10 +7,18 @@ export default function Admin() {
     const [urlInput, setUrlInput] = useState("");
     const [textColorInput, setTextColorInput] = useState("#F1FAFE");
     const [backgroundColorInput, setBackgroundColorInput] = useState("#A9DEF9");
+
+    async function handleRegister(e: FormEvent) {
+        e.preventDefault();
+
+        alert("teste")
+    }
+
     return (
         <div className="flex items-center flex-col min-h-screen pb-7 px-2">
             <Header />
-           <form className="flex flex-col gap-2 mt-10 w-full max-w-md">
+
+           <form className="flex flex-col gap-2 mt-10 w-full max-w-md" onSubmit={handleRegister}>
                 <label className="text-black font-light mt-2 outline-black/50 rounded-lg p-1">
                 Nome
                 </label>

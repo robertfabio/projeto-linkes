@@ -39,8 +39,10 @@ export default function Login() {
                 navigate("/admin", { replace: true });
             }, 1500);
         })
-        .catch(() => {
-            showBanner("Erro ao fazer login. Verifique suas credenciais.", "error");
+        .catch((err) => {
+            console.error('Erro signInWithEmailAndPassword:', err);
+            const message = err?.code || err?.message || 'Erro ao fazer login. Verifique suas credenciais.';
+            showBanner(message, "error");
         })
         .finally(() => setLoading(false));
     }
@@ -52,9 +54,11 @@ export default function Login() {
             showBanner("Login com Google realizado!", "success");
             setTimeout(() => {
                 navigate("/admin", { replace: true });
-            }, 1500);
+            }, 5000);
         } catch (error) {
-            showBanner("Erro ao fazer login com Google.", "error");
+            console.error('Erro signInWithPopup (Google):', error);
+            const message = (error as any)?.code || (error as any)?.message || 'Erro ao fazer login com Google.';
+            showBanner(message, "error");
         } finally {
             setLoadingGoogle(false);
         }
@@ -157,12 +161,9 @@ export default function Login() {
                                 />
                             </div>
                             
-                            <div className="space-y-1">
+                            <div className="space-y-1 ">
                                 <div className="flex items-center justify-between">
                                     <label className="block text-sm font-semibold text-gray-900">Senha</label>
-                                    <a href="#" className="text-xs text-slate-700 hover:text-slate-900 font-semibold">
-                                        Esqueceu?
-                                    </a>
                                 </div>
                                 <Input
                                     placeholder="Digite sua senha"
@@ -171,6 +172,9 @@ export default function Login() {
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
                                 />
+                                <a href="#" className="text-xs text-slate-700 hover:text-slate-900 font-semibold flex justify-end">
+                                        Esqueceu?
+                                    </a>
                             </div>
 
                             <button
