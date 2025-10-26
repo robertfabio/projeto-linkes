@@ -1,11 +1,13 @@
 {
   "name": "projeto-linkes",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+  "build": "tsc -b && vite build",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
