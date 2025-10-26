@@ -10,8 +10,9 @@ export function Social({ url, children }: SocialProps) {
         <a 
         href={url} 
         target="_blank" 
-        rel="noopener noreferrer">
-        
+        rel="noopener noreferrer"
+        className="hover:opacity-70 transition-opacity"
+        >
         {children}
         </a>
     )

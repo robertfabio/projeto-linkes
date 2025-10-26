@@ -34,7 +34,7 @@ export function Header() {
           <NavLink to="/admin" className={getNavLinkClass}>
             Links
           </NavLink>
-          <NavLink to="/admin/social" className={getNavLinkClass}>
+          <NavLink to="/social" className={getNavLinkClass}>
             <span className="hidden sm:inline">Redes Sociais</span>
             <span className="inline sm:hidden">Redes</span>
           </NavLink>
