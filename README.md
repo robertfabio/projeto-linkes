@@ -1,73 +1,39 @@
-# React + TypeScript + Vite
+# Linkes — Projeto pessoal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Linkes é meu projeto pessoal para centralizar links (estilo Linktree). Foi uma forma prática de aprender e experimentar a stack moderna de front-end, além de construir uma pequena interface administrativa para gerenciar links.
 
-Currently, two official plugins are available:
+### O que é possível hoje
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Ver os links publicados e abri-los em nova aba
+- Página administrativa para adicionar, editar e remover links
+- Personalizar cores do card (background/text) por link
+- Integração simples com Firebase (Firestore) para persistência
 
-## React Compiler
+### O que eu aprendi construindo isso
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React + TypeScript: componentes funcionais, hooks e tipagem
+- Vite: desenvolvimento rápido e build para produção
+- Tailwind CSS: utilitários para layout e design responsivo
+- Firebase (Firestore): leitura/gravação em tempo real
+- Deploy: GitHub Pages e Firebase Hosting (tratamento de base paths)
 
-## Expanding the ESLint configuration
+### Como rodar (rápido)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```powershell
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Build para produção:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```powershell
+npm run build
 ```
+
+### Ideias / próximas features
+
+- Ordenação por arrastar e soltar dos links
+- Agendamento e expiração de links
+- Analytics simples (cliques por link)
+- Temas e perfis públicos compartilháveis
+
