@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/satoshi');
 @import "tailwindcss";
 
 body {
@@ -9,4 +10,117 @@ body {
   background: linear-gradient(to bottom, #f8fafc 0%, #e2e8f0 100%);
   color: #1e293b;
   min-height: 100vh;
+}
+
+/* Heading styles: use Poppins for a stronger title */
+.heading-font {
+  /* Satoshi for headings (modern, geometric sans). Keep Poppins as fallback */
+  font-family: 'Satoshi', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: -0.025em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optional title shadow to increase contrast over animated background */
+.title-glow {
+  text-shadow: 0 6px 18px rgba(15, 23, 42, 0.45), 0 2px 6px rgba(15, 23, 42, 0.25);
+}
+
+/* Cartoon layered title */
+.cartoon-title {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cartoon-title .layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  pointer-events: none;
+}
+
+/* back shadow layer: blurred and offset */
+.cartoon-title .layer-back {
+  /* subtle dark-blue shadow to ground the title */
+  color: rgba(2, 30, 80, 0.9);
+  transform: translate(8px, 8px) scale(1.02);
+  filter: blur(5px);
+  z-index: 0;
+}
+
+/* middle outline / stroke layer */
+.cartoon-title .layer-mid {
+  color: #0b2540; /* dark bluish stroke */
+  -webkit-text-stroke: 6px #0b3d91; /* navy-blue outline to match site */
+  z-index: 1;
+}
+
+/* front fill layer: gradient text */
+.cartoon-title .layer-front {
+  position: relative;
+  z-index: 2;
+  /* blue -> white gradient that matches the site's palette */
+  background: linear-gradient(90deg, #e6f6ff 0%, #60a5fa 40%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transform: translateY(-2px);
+}
+
+/* playful tilt on hover */
+.cartoon-title:hover .layer-front {
+  transform: translateY(-2px) rotate(-2deg) scale(1.02);
+  transition: transform 220ms ease;
+}
+
+/* responsive size tweak if needed */
+.cartoon-title-lg { font-size: 3rem; }
+.cartoon-title-xl { font-size: 4rem; }
+
+/* Entrance and subtle float animations for a more fluid effect */
+@keyframes title-entrance {
+  0% { opacity: 0; transform: translateY(18px) scale(0.985); }
+  60% { opacity: 1; transform: translateY(-6px) scale(1.01); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes title-float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+.cartoon-title {
+  /* gentle continuous float for the whole element */
+  animation: title-float 6s ease-in-out infinite;
+}
+
+.cartoon-title .layer-back {
+  animation: title-entrance 800ms cubic-bezier(.2,.9,.2,1) both;
+  animation-delay: 0ms;
+}
+
+.cartoon-title .layer-mid {
+  animation: title-entrance 820ms cubic-bezier(.2,.9,.2,1) both;
+  animation-delay: 80ms;
+}
+
+.cartoon-title .layer-front {
+  animation: title-entrance 860ms cubic-bezier(.2,.9,.2,1) both;
+  animation-delay: 140ms;
+  transition: transform 300ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* reduce motion preference handling */
+@media (prefers-reduced-motion: reduce) {
+  .cartoon-title, .cartoon-title .layer-back, .cartoon-title .layer-mid, .cartoon-title .layer-front {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
 }

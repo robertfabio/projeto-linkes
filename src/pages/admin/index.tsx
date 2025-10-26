@@ -123,9 +123,9 @@ export default function Admin() {
                     onChange={(e) => setUrlInput(e.target.value)}
                 />
 
-                <section className="flex my-4 gap-5">
+                <section className="justify-evenly items-center inline-flex w-full mt-2 mb-2">
                     <div className="flex gap-2">
-                        <label className="text-black font-medium mt-2 mb-2 outline-gray-500/50 rounded-lg p-2">
+                        <label className="text-black font-medium outline-gray-500/50 rounded-lg p-2">
                             Cor de fundo
                        </label>
                           <BetterColorPicker
@@ -134,8 +134,8 @@ export default function Admin() {
                           />
                     </div>
 
-                    <div className="flex gap-2">
-                        <label className="text-black font-medium mt-2 mb-2 outline-black/50 rounded-lg p-2">
+                    <div className="flex gap-2 ">
+                        <label className="text-black font-medium outline-black/50 rounded-lg p-2">
                             Cor do texto
                        </label>
                        <BetterColorPicker
